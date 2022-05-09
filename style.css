@@ -1,0 +1,318 @@
+body{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    background: url("https://images.unsplash.com/photo-1558486012-817176f84c6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2VhdGhlciUyMGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60") no-repeat center center fixed;  
+ font-family: 'Roboto', sans-serif;
+   backdrop-filter:brightness(0.5);
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+  transition: 1s;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+ body::-webkit-scrollbar{
+     background-color: rgba(0, 0, 0, 0.884);
+ }
+ body::-webkit-scrollbar-thumb{
+     background-color: aliceblue;
+    border-radius:10px;
+ }
+.main_content{
+    display:none;
+}
+.nav_bar{
+    width:auto;
+    height:50px;
+    padding-bottom: 10px;
+   background-color:  rgba(74, 74, 235, 0);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.days_container{
+    display:flex;
+    justify-content: space-around;
+    color:aliceblue;
+    background-color: rgba(74, 74, 235, 0);
+    margin-top:20px;
+}
+.today,.tomorrowNigeria,.threedays,.tomorrowGeneral,.today_func_two,.todayGeneral,.threedaysGeneral{
+ padding:10px;
+ cursor:pointer;
+}
+.threedays,.threedaysGeneral{
+    position: absolute;
+    left:77%;
+}
+.todayGeneral{
+    position:relative;
+    left:-32px;
+}
+
+.tomorrowNigeria{
+  position:fixed;
+}
+.tomorrowGeneral{
+    position:relative;
+    left: -24%;
+}
+.menu_button{
+ border:none;
+ background-color: rgba(74, 74, 235, 0);
+ margin-left:9px;
+}
+.menu_image{
+    width:40px;
+    height:40px;
+    cursor: pointer;
+}
+.search_iconbox{
+   margin-right:30px;
+   cursor:pointer;
+   
+}
+.search_container,.search_iconbox{
+    margin-top:10px;
+}
+.search_input{
+    border:none;
+    outline:none;
+    padding: 9px;
+    border-radius:5px;
+}
+.over_all{
+    width:95%;
+    background-color:rgba(31, 29, 29, 0.521);
+   position: absolute;
+   height:404%;
+   top:484px;
+   left:50%;
+   transform: translate(-50%, -50%);
+   border-radius: 10px;
+}
+.time_display,.weatherImage_text,.fealslike{
+    color:aliceblue;
+    font-size: 100%;
+}
+.time_displayBox{
+  margin:20px;
+  display:flex;
+  justify-content: space-around;
+  position: relative;
+  top: 22px;
+}
+.sunIconBox{
+    display:flex;
+}
+.sunIconOne,.sunIconTwo{
+  margin-left: 38px;
+  position: relative;
+  top:-10px;
+}
+
+.fealslike{
+    margin:10px 4px;
+}
+.celcius{
+  color: aliceblue;
+  font-size:50px;
+}
+.degree{
+  font-size:20px;
+  margin:5px;
+  position: relative;
+  top:-8px;
+}
+.fealsLikeDegree,.temperatureDegree{
+    font-size: 10px;
+    position: relative;
+    top: -10px;
+    left: 2px;
+}
+sup{
+ font-size:30px;
+ position:relative;
+ top:2px;
+}
+.weatherImage{
+    width:100px;
+    position: relative;
+    top:30px;
+}
+.nigeria-flag{
+    width:30px;
+    position:absolute;
+}
+.worldImg{
+    width:30px;
+    position: absolute;
+    left: 105px;
+    top:8px;
+}
+
+.burger_icon{
+  width:60px
+}
+.weather_display{
+ display:flex;
+ justify-content:space-evenly;
+ align-items: baseline;
+ position: relative;
+ top:-24px;
+}
+.weather_info_box,.weatherTomorrow{
+    position: relative;
+    top:12px;
+}
+.precipitationBox,.humidity_box,.pressure_box,.temperature_box,.windgust_box,.avgHumidityBox,.avgTemperatureBox,.maxTemperatureBox,.maxWindBox,.chanceOfRainBox,.chanceOfSnowBox,.ultraVioletIndexBox{
+    display:flex;
+    justify-content: space-around;
+    color:aliceblue;
+}
+.precipitation_pic,.Wind_pictwo,.temperature_pictwo,.humidity_pic,.pressure_pic,.temperature_pic,.wind_pic,.chanceOfRain_pic,.chanceOfSnow_pic,.ultraViolet_pic{
+    width:30px;
+    height:30px;
+    position: relative;
+    top:10px;
+    right:10px;
+}
+.temperature_pictwo{
+    right:7px;
+}
+.ultraViolet_pic{
+    left:-3px;
+}
+.Wind_pictwo{
+    right:21px;
+}
+.maxWind{
+    left:16px;
+}
+.humidity_pic{
+    position: relative;
+    left:-22px;
+}
+.temperature_pic{
+    position: relative;
+    left: -13px;
+}
+.precipitation,.humidity,.pressure,.temperature,.windgust,.avgHumidity,.avgtemperature,.maxtemperature,.maxWind,.chanceOfRain,.chanceOfSnow,.ultraVioletIndex{
+    position: relative;
+    top:15px;
+}
+.pressure_text{
+    padding:5px;
+}
+.location_headingInfo{
+  position: fixed; 
+  color: aliceblue; 
+  display: flex;  
+  top:16%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  padding-top:20px;
+  background-color: rgba(141, 146, 151, 0.192);
+  border-radius:10px;
+  transition: 1s;
+}
+[offtopone]{
+   top: -50% !important;
+}
+.sunrise,.sunset{
+    color:aliceblue;
+    margin-left: 20px;
+}
+.regionInfo,.nameInfo,.countryInfo{
+    padding:19px;
+}
+[showWeatherInfoBox]{
+  display:block;
+}
+[hideWeatherInfoBox]{
+    display:none;
+}
+.weatherTomorrow{
+    color:aliceblue;
+}
+[toggleBoxTomorrow]{
+    display:none;
+}
+.weatherTomorrow{
+    position: relative;
+    top:-16;
+}
+.firstDayWeather,.secondDayWeather,.thirdDayWeather{
+    color:black;
+    display:flex;
+    justify-content: space-evenly;
+    background-color:rgba(255, 255, 255, 0.979);
+    max-width: 90%;
+    transition:1s;
+    border-radius: 10px;
+    margin: auto;
+    margin: 50px;
+    padding:5px 20px 5px 20px;
+    opacity:0;
+    transform: scale(0.8);
+}
+.AllThreeDays{
+ margin:0px auto;
+}
+
+.firstDayWeatherGeneral,.secondDayWeatherGeneral,.thirdDayWeatherGeneral{
+    display:flex;
+    justify-content: space-evenly;
+    background-color:rgba(255, 255, 255, 0.979);
+    width: 85%;
+    border-radius: 10px;
+    margin:0px auto;
+    margin-bottom:30px;
+    opacity:0;
+    transform: scale(0.8);
+    
+}
+.threeDaysGeneral{
+    position:absolute;
+    top:132%;
+    width:100%;
+}
+@media (min-width:800px){
+    .firstDayWeatherGeneral,.secondDayWeatherGeneral,.thirdDayWeatherGeneral{
+      max-width: 580px;        
+    }
+}
+.loader{
+    width:100%;
+    height:100vh;
+}
+.loaderBox{
+  position: fixed;
+  top:60%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.update{
+    background-color: transparent;
+    color:aliceblue;
+    border:none;
+    outline:none;
+    text-align: -webkit-center;
+    font-size:20px;
+
+}
+.updateBox{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:16px;
+    border-radius: 50%;
+}
+progress{
+    width:290px;
+    height: 25px;
+}
