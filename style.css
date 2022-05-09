@@ -12,6 +12,7 @@ body{
   transition: 1s;
   position: relative;
   scroll-behavior: smooth;
+-webkit-tap-highlight-color:transparent;
 }
 
  body::-webkit-scrollbar{
