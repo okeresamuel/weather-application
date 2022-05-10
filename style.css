@@ -14,7 +14,6 @@ body{
   scroll-behavior: smooth;
 -webkit-tap-highlight-color:transparent;
 }
-
  body::-webkit-scrollbar{
      background-color: rgba(0, 0, 0, 0.884);
  }
@@ -89,7 +88,7 @@ body{
     width:95%;
     background-color:rgba(31, 29, 29, 0.521);
    position: absolute;
-   height:404%;
+   height:424%;
    top:484px;
    left:50%;
    transform: translate(-50%, -50%);
