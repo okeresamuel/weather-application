@@ -1,234 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
-  <title>Weather App</title>
-</head>
-<body>
-<main class="main_content">
-  <nav>
-  <div class="nav_bar">
- <button class="menu_button">
-   <img class="menu_image" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-weather-forecast-vacation-planning-adventure-flaticons-lineal-color-flat-icons.png" alt="photo">
- </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Weather  Pro Application" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <main class="main_content">
+      <nav>
+        <div class="nav_bar">
+          <button class="menu_button">
+            <img
+              class="menu_image"
+              src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-weather-forecast-vacation-planning-adventure-flaticons-lineal-color-flat-icons.png"
+              alt="photo"
+            />
+          </button>
 
-<div class="search_container">
-  <form action="#closed">
-  <input type="text" name="" class="search_input" placeholder="Region  country or state">
-  </form>
-</div>
-<div class="search_iconbox">
- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-</svg>
-</div>
-</div>
+          <div class="search_container">
+            <form action="#closed">
+              <input
+                type="text"
+                name=""
+                class="search_input"
+                placeholder="Region  country or state"
+              />
+            </form>
+          </div>
+          <div class="search_iconbox">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="white"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </div>
+        </div>
 
+        <div class="location_headingInfo" offtopone>
+          <p class="regionInfo"></p>
+          <p class="countryInfo"></p>
+          <p class="nameInfo"></p>
+        </div>
 
+        <div class="days_container">
+          <h3 class="today">Today</h3>
+          <h3 class="todayGeneral"></h3>
+          <h3 class="tomorrowNigeria">
+            Tomorrow
+            <img
+              class="nigeria-flag"
+              src="https://img.icons8.com/clouds/2x/nigeria-flag.png"
+              alt="photo"
+            />
+          </h3>
+          <h3 class="tomorrowGeneral"></h3>
+          <h3 class="threedays">3 days</h3>
+          <h3 class="threedaysGeneral"></h3>
+        </div>
+      </nav>
+      <div class="over_all">
+        <div class="home_div">
+          <div class="time_displayBox">
+            <span class="time_display"></span>
+            <div class="sunIconBox">
+              <div>
+                <svg
+                  class="sunIconOne"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="yellow"
+                  class="bi bi-sunrise"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708l1.5-1.5zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <p class="sunrise"></p>
+              </div>
+              <div>
+                <svg
+                  class="sunIconTwo"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="aliceblue"
+                  class="bi bi-sunset"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708l1.5 1.5zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <p class="sunset"></p>
+              </div>
+            </div>
+          </div>
 
-<div class="location_headingInfo" offtopone>
-  <p class="regionInfo"></p>
-  <p class="countryInfo"></p>
-  <p class="nameInfo"></p>
-</div>
+          <div class="weather_display">
+            <div>
+              <span class="celcius"></span>
+              <div class="fealslike"></div>
+            </div>
 
-<div class="days_container">
-  <h3 class="today">Today</h3>
-  <h3 class="todayGeneral"></h3>
-  <h3 class="tomorrowNigeria">Tomorrow <img class="nigeria-flag"src="https://img.icons8.com/clouds/2x/nigeria-flag.png" alt="photo"></h3>
-   <h3 class="tomorrowGeneral"></h3>
-  <h3 class="threedays">3 days</h3>
-  <h3 class="threedaysGeneral"></h3>
-  </div>
-</nav>
-<div class="over_all">
+            <div>
+              <img class="weatherImage" src="" alt="" />
+              <p class="weatherImage_text"></p>
+            </div>
+          </div>
 
-  <div class="home_div">
-    <div class="time_displayBox">
-   <span class="time_display"></span>
-   <div class="sunIconBox">
-     <div>
-    <svg class="sunIconOne" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="yellow" class="bi bi-sunrise" viewBox="0 0 16 16">
-      <path d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708l1.5-1.5zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
-    </svg>
-   <p class="sunrise"></p> 
-  </div>
-  <div>
-    <svg class="sunIconTwo" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="aliceblue" class="bi bi-sunset" viewBox="0 0 16 16">
-      <path d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708l1.5 1.5zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
-    </svg>
-  <p class="sunset"></p> 
-  </div>
-  </div>  
-</div>
+          <div class="weather_info_box" showWeatherInfoBox>
+            <div class="humidity_box">
+              <p class="humidity_text">
+                <img
+                  class="humidity_pic"
+                  src="https://img.icons8.com/external-vectorslab-flat-vectorslab/344/external-humidity-weather-and-season-vectorslab-flat-vectorslab.png"
+                  alt="humidity pic"
+                />
+                Humidity
+              </p>
+              <p class="humidity"></p>
+            </div>
 
-   <div class="weather_display">
-      <div>
-     <span class="celcius"></span>
-     <div class="fealslike"></div>
-     </div>
+            <div class="pressure_box">
+              <p class="pressure_text">
+                <img
+                  class="pressure_pic"
+                  src="https://img.icons8.com/color/344/barometer-gauge.png"
+                  alt="pressure_pic"
+                />
+                Pressure
+              </p>
+              <p class="pressure"></p>
+            </div>
 
-      <div>
-      <img class="weatherImage" src="" alt="">
-      <p class="weatherImage_text"></p>
-      </div>
-   </div>
+            <div class="temperature_box">
+              <p class="temparature_text">
+                <img
+                  class="temperature_pic"
+                  src="https://img.icons8.com/fluency/2x/temperature.png"
+                  alt="photo"
+                />
+                Temperature
+              </p>
+              <p class="temperature"></p>
+            </div>
 
-  <div class="weather_info_box" showWeatherInfoBox>
+            <div class="windgust_box">
+              <p class="windgust_text">
+                <img
+                  class="wind_pic"
+                  src="https://img.icons8.com/office/344/wind.png"
+                  alt="photo"
+                />
+                Wind Gust
+              </p>
+              <p class="windgust"></p>
+            </div>
+          </div>
 
-    <div class="humidity_box">
-    <p class="humidity_text">
-      <img class="humidity_pic"src="https://img.icons8.com/external-vectorslab-flat-vectorslab/344/external-humidity-weather-and-season-vectorslab-flat-vectorslab.png" alt="humidity pic">   Humidity</p>
-    <p class="humidity"></p>
-    </div>
-     
-    <div class="pressure_box">
-    <p class="pressure_text">
-      <img class="pressure_pic" src="https://img.icons8.com/color/344/barometer-gauge.png" alt="pressure_pic"> Pressure</p>
-    <p class="pressure"></p>
-    </div>
-     
-    <div class="temperature_box">
-    <p class="temparature_text">
-      <img class="temperature_pic" src="https://img.icons8.com/fluency/2x/temperature.png" alt="photo"> Temperature</p>
-    <p class="temperature"></p>
-    </div>
-     
-    <div class="windgust_box">
-    <p class="windgust_text">
-     <img class="wind_pic" src="https://img.icons8.com/office/344/wind.png" alt="photo">   Wind Gust</p>
-    <p class="windgust"></p>
-    </div>
+          <div class="weatherTomorrow" toggleBoxTomorrow>
+            <!-- this box contains weather for TomorrowNigeria -->
 
-  </div>
+            <div class="avgHumidityBox">
+              <p class="avghumidity_text">
+                <img
+                  class="humidity_pic"
+                  src="https://img.icons8.com/external-vectorslab-flat-vectorslab/344/external-humidity-weather-and-season-vectorslab-flat-vectorslab.png"
+                  alt="humidity pic"
+                />Avg-Humidity
+              </p>
+              <p class="avgHumidity"></p>
+            </div>
 
-<div class="weatherTomorrow" toggleBoxTomorrow>
-   <!-- this box contains weather for TomorrowNigeria -->
-   
-  <div class="avgHumidityBox">
-  <p class="avghumidity_text"> 
-    <img class="humidity_pic"src="https://img.icons8.com/external-vectorslab-flat-vectorslab/344/external-humidity-weather-and-season-vectorslab-flat-vectorslab.png" alt="humidity pic">Avg-Humidity</p>
-     <p class="avgHumidity"></p>
-  </div>
+            <div class="avgTemperatureBox">
+              <p class="avgtemperature_text">
+                <img
+                  class="temperature_pic"
+                  src="https://img.icons8.com/fluency/2x/temperature.png"
+                  alt="photo"
+                />
+                Avg-Temperature
+              </p>
+              <p class="avgtemperature"></p>
+            </div>
 
-<div class="avgTemperatureBox">
-<p class="avgtemperature_text">
-<img class="temperature_pic" src="https://img.icons8.com/fluency/2x/temperature.png" alt="photo"> Avg-Temperature</p>
-<p class="avgtemperature"></p>
-</div>
+            <div class="maxTemperatureBox">
+              <p class="maxtemperature_text">
+                <img
+                  class="temperature_pictwo"
+                  src="https://img.icons8.com/color/2x/thermometer.png"
+                  alt="photo"
+                />
+                Max-Temperature
+              </p>
+              <p class="maxtemperature"></p>
+            </div>
 
-<div class="maxTemperatureBox">
-  <p class="maxtemperature_text">
-    <img class="temperature_pictwo" src="https://img.icons8.com/color/2x/thermometer.png" alt="photo"> Max-Temperature</p>
-  <p class="maxtemperature"></p>
-</div>
+            <div class="maxWindBox">
+              <p class="maxwind_text">
+                <img
+                  class="Wind_pictwo"
+                  src="https://img.icons8.com/color/2x/wind.png"
+                  alt="photo"
+                />
+                Max-Wind
+              </p>
+              <p class="maxWind"></p>
+            </div>
 
-<div class="maxWindBox">
- <p class="maxwind_text"> 
-  <img class="Wind_pictwo" src="https://img.icons8.com/color/2x/wind.png" alt="photo"> Max-Wind</p>
-  <p class="maxWind"></p>
-</div>
+            <div class="chanceOfRainBox">
+              <p class="chanceOfRain_text">
+                <img
+                  class="chanceOfRain_pic"
+                  src="https://img.icons8.com/emoji/2x/sun-behind-rain-cloud.png"
+                  alt="photo"
+                />
+                Chance Of Rain
+              </p>
+              <p class="chanceOfRain"></p>
+            </div>
 
-<div class="chanceOfRainBox">
-  <p class="chanceOfRain_text"><img class="chanceOfRain_pic" src="https://img.icons8.com/emoji/2x/sun-behind-rain-cloud.png" alt="photo"> Chance Of Rain</p>
-  <p class="chanceOfRain"></p>
-</div>
+            <div class="chanceOfSnowBox">
+              <p class="chanceOfSnow_text">
+                <img
+                  class="chanceOfSnow_pic"
+                  src="https://img.icons8.com/color/2x/snow.png"
+                  alt="photo"
+                />
+                Chance Of Snow
+              </p>
+              <p class="chanceOfSnow"></p>
+            </div>
+          </div>
+        </div>
+        <!-- three days weather display for nigeria -->
+        <div class="AllThreeDays">
+          <div class="firstDayWeather">
+            <div>
+              <p>Today</p>
+              <p class="weatherCondition"></p>
+            </div>
+            <div>
+              <img class="degreePic" src="" alt="photo" />
+              <span class="celciusForThreeDays"></span>
+            </div>
+          </div>
 
-<div class="chanceOfSnowBox">
-  <p class="chanceOfSnow_text"><img class="chanceOfSnow_pic" src="https://img.icons8.com/color/2x/snow.png" alt="photo"> Chance Of Snow</p>
-  <p class="chanceOfSnow"></p>
-</div>
-  </div>
+          <div class="secondDayWeather">
+            <div>
+              <p class="tomorrow"></p>
+              <p class="weatherConditionTomorrow"></p>
+            </div>
+            <div>
+              <img class="degreePicTomorrow" src="" alt="photo" />
+            </div>
+          </div>
+        </div>
+        <div class="thirdDayWeather">
+          <div>
+            <p class="ThirdDay">The Third Day</p>
+            <p class="weatherConditionThirdDay"></p>
+          </div>
 
-</div>
-<!-- three days weather display for nigeria -->
-<div class="AllThreeDays">
-<div class="firstDayWeather">  
-<div>
-<p>Today</p>
-<p class="weatherCondition"></p>
-</div> 
-<div>
-   <img class="degreePic" src="" alt="photo"> 
-   <span class="celciusForThreeDays"></span>
-</div>
-</div>
-
-<div class="secondDayWeather">  
-  <div>
-  <p class="tomorrow"></p>
-  <p class="weatherConditionTomorrow"></p>
-  </div>  
-  <div>
-     <img class="degreePicTomorrow" src="" alt="photo">
-     </div>  
-  </div>
-  </div>
-  <div class="thirdDayWeather">  
-    <div>
-    <p class="ThirdDay">The Third Day</p>
-    <p class="weatherConditionThirdDay"></p>
-    </div>  
-    
-    <div>
-       <img class="weatherPicThirdDay" src="" alt="photo">
-    </div>
-  </div>
-</div>
-<div>
-<!-- all three days for general weather -->
-<div class="threeDaysGeneral">
-  <div class="firstDayWeatherGeneral">  
-    <div>
-    <p>Today</p>
-    <p class="weatherConditionGeneral"></p>
-    </div>  
-    <div>
-       <img class="degreePicGeneral" src="" alt="photo"> 
-       <span class="celciusForfirstGeneral"></span>
-    </div>
-    </div>
-
-    <div class="secondDayWeatherGeneral">  
-      <div>
-      <p class="tomorrowGen"></p>
-      <p class="secondConditionGeneral"></p>
-      </div>  
-      
-      <div>
-         <img class="degreePicGeneralSecond" src="" alt="photo"> 
-      </div>
-      </div>
-
-  
-      <div class="thirdDayWeatherGeneral">  
-        <div>
-        <p class="ThirdDayGen">The Third Day</p>
-        <p class="weatherConditionThirdDayGen"></p>
-        </div>  
-        
-        <div>
-           <img class="weatherPicThirdDayGen" src="" alt="photo">
+          <div>
+            <img class="weatherPicThirdDay" src="" alt="photo" />
+          </div>
         </div>
       </div>
-</div>
-</div>
-</main>
-<div class="loader">
-<div class="loaderBox">
-  <progress class="inner" max="100" value="0"></progress>
+      <div>
+        <!-- all three days for general weather -->
+        <div class="threeDaysGeneral">
+          <div class="firstDayWeatherGeneral">
+            <div>
+              <p>Today</p>
+              <p class="weatherConditionGeneral"></p>
+            </div>
+            <div>
+              <img class="degreePicGeneral" src="" alt="photo" />
+              <span class="celciusForfirstGeneral"></span>
+            </div>
+          </div>
 
-<div class="updateBox">
-<input type="text" class="update" value="0">
- </div>
-</div>
-</div>
-<script src="editor.js"></script>
-</body>
+          <div class="secondDayWeatherGeneral">
+            <div>
+              <p class="tomorrowGen"></p>
+              <p class="secondConditionGeneral"></p>
+            </div>
+
+            <div>
+              <img class="degreePicGeneralSecond" src="" alt="photo" />
+            </div>
+          </div>
+
+          <div class="thirdDayWeatherGeneral">
+            <div>
+              <p class="ThirdDayGen">The Third Day</p>
+              <p class="weatherConditionThirdDayGen"></p>
+            </div>
+
+            <div>
+              <img class="weatherPicThirdDayGen" src="" alt="photo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="loader">
+      <div class="loaderBox">
+        <h1 class="AppTitle">Weather Pro</h1>
+        <div class="updateBox">
+          <input type="text" class="update" value="0" />
+        </div>
+        <progress class="inner" max="100" value="0"></progress>
+      </div>
+    </div>
+    <script src="editor.js"></script>
+  </body>
 </html>
