@@ -356,10 +356,7 @@ sup {
 .AppTitle{
   font-size: 35px;
   font-weight: 700;
-  background: linear-gradient(to right, #ff69b4,
-          #ff6b08, #cf23cf, #eedd44, #0000ff);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  color:white;
 }
 .update {
   background-color: transparent;
