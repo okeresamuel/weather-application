@@ -477,6 +477,8 @@ function executeOnclickSearchBtn() {
           "backgroundImage",
           "url('https://images.unsplash.com/photo-1501691223387-dd0500403074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGxpZ2h0JTIwcmFpbiUyMHNob3dlciUyMHdlYXRoZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')"
         );
+        $(".weatherImage").addClass("weatherImageRainWeather")
+        $(".celcius_fealslikeContainer").addClass("adjust")
       }
     });
   // change tommorrow text to general
@@ -653,6 +655,8 @@ window.onload = () => {
           "backgroundImage",
           "url('https://images.unsplash.com/photo-1501691223387-dd0500403074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGxpZ2h0JTIwcmFpbiUyMHNob3dlciUyMHdlYXRoZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')"
         );
+        $(".weatherImage").addClass("weatherImageRainWeather");
+        $(".celcius_fealslikeContainer").addClass("adjust");
       }
       //toggle back today
       let todayToggleBack = document.querySelector(".today");
